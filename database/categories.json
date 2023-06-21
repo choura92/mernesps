@@ -1,0 +1,10 @@
+[
+{ "_id" : { "$oid" : "63d4a21c504e7d353d8d0f87" }, "imagecategorie" : "http://res.cloudinary.com/iset-sfax/image/upload/v1658749242/images/lenouv.jpg.jpg", "nomcategorie" : "Électroniques" },
+{ "_id" : { "$oid" : "63d4a21c504e7d353d8d0f88" }, "imagecategorie" : "http://res.cloudinary.com/iset-sfax/image/upload/v1658749354/images/Telephones-tablettes.jpg.jpg", "nomcategorie" : "Téléphone & Tablette" },
+{ "_id" : { "$oid" : "63d4a21c504e7d353d8d0f89" }, "imagecategorie" : "http://res.cloudinary.com/iset-sfax/image/upload/v1658749154/images/Informatique.jpg.jpg", "nomcategorie" : "Informatique" },
+{ "_id" : { "$oid" : "63d4a21c504e7d353d8d0f8a" }, "imagecategorie" : "http://res.cloudinary.com/iset-sfax/image/upload/v1658747406/images/Mode-HommeJ.jpg.jpg", "nomcategorie" : "Mode" },
+{ "_id" : { "$oid" : "63d4a21c504e7d353d8d0f8b" }, "imagecategorie" : "http://res.cloudinary.com/iset-sfax/image/upload/v1658749202/images/sport4.jpg.jpg", "nomcategorie" : "Articles de sport" },
+{ "_id" : { "$oid" : "63d4a21c504e7d353d8d0f8c" }, "imagecategorie" : "http://res.cloudinary.com/iset-sfax/image/upload/v1658749261/images/Sante-beaute.jpg.jpg", "nomcategorie" : "Santé & Beauté" },
+{ "_id" : { "$oid" : "63d4a21c504e7d353d8d0f8d" }, "imagecategorie" : "http://res.cloudinary.com/iset-sfax/image/upload/v1658749330/images/Superettes.jpg.jpg", "nomcategorie" : "Superette" },
+{ "_id" : { "$oid" : "63d4a21c504e7d353d8d0f8e" }, "imagecategorie" : "http://res.cloudinary.com/iset-sfax/image/upload/v1658593524/images/jeuxvideo.jpg.jpg", "nomcategorie" : "jeux vidéos" }
+]
