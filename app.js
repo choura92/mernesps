@@ -4,11 +4,12 @@ const dotenv =require('dotenv')
 const categorieRouter =require("./routes/categorie.route")
 const scategorieRouter =require("./routes/scategorie.route")
 const articlesRouter =require("./routes/article.route")
-
+const cors=require('cors')
 dotenv.config()
 const app = express();
 //BodyParser Middleware
 app.use(express.json());
+app.use(cors())
 mongoose.set("strictQuery", false);
 // Connexion à la base données
 mongoose.connect(process.env.DATABASECLOUD,{
