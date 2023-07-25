@@ -5,11 +5,13 @@ const categorieRouter =require("./routes/categorie.route")
 const scategorieRouter =require("./routes/scategorie.route")
 const articlesRouter =require("./routes/article.route")
 const cors=require('cors')
+const paymentRouter = require( "./routes/payment.route.js")
 dotenv.config()
 const app = express();
 //BodyParser Middleware
 app.use(express.json());
 app.use(cors())
+app.use('/api/payment', paymentRouter);
 mongoose.set("strictQuery", false);
 // Connexion à la base données
 mongoose.connect(process.env.DATABASECLOUD,{

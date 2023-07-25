@@ -5,6 +5,30 @@ const Article=require("../models/article")
 // afficher la liste des articles.
 router.get('/', async (req, res )=> {
     try {
+        const articles = await Article.find({}, null, {sort: {'_id': -1}}).populate("scategorieID").exec();                
+        res.status(200).json(articles);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+
+});
+router.get('/productspage', async(req, res) => {
+const { page, pagesize } = req.query;
+// Calculez le nombre d'éléments à sauter (offset)
+const offset = (page - 1) * pagesize;
+try {
+// Effectuez la requête à votre source de données en utilisant les paramètres de pagination
+const articles = await Article.find( {}, null, {sort: {'_id': -1}})
+.skip(offset)
+.limit(pagesize)
+
+res.status(200).json(articles);
+} catch (error) {
+res.status(404).json({ message: error.message });
+}
+});
+router.get('/productpage', async (req, res )=> {
+    try {
         const articles = await Article.find({}, null, {sort: {'_id': -1}}).populate("scategorieID").exec();
                 
         res.status(200).json(articles);
@@ -19,8 +43,8 @@ router.post('/', async (req, res) =>  {
     const nouvarticle = new Article(req.body)
 
     try {
-        await nouvarticle.save();
-
+        const articles = await
+        Article.findById(response._id).populate("scategorieID").exec();
         res.status(200).json(nouvarticle );
     } catch (error) {
         res.status(404).json({ message: error.message });
@@ -48,8 +72,8 @@ router.put('/:articleId', async (req, res)=> {
         { $set: req.body },
       { new: true }
     );
-    res.status(200).json(art);
-    } catch (error) {
+    const articles = await
+    Article.findById(art._id).populate("scategorieID").exec();    } catch (error) {
     res.status(404).json({ message: error.message });
     }
 });
