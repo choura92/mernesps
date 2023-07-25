@@ -38,20 +38,18 @@ router.get('/productpage', async (req, res )=> {
 
 });
 // créer un nouvel article
-router.post('/', async (req, res) =>  {
-    
+router.post('/', async (req, res) => {
     const nouvarticle = new Article(req.body)
-
     try {
-        const articles = await
-        Article.findById(response._id).populate("scategorieID").exec();
-        res.status(200).json(nouvarticle );
+    const response =await nouvarticle.save();
+    const articles = await
+    Article.findById(response._id).populate("scategorieID").exec();
+    res.status(200).json(articles);
     } catch (error) {
-        res.status(404).json({ message: error.message });
+    res.status(404).json({ message: error.message });
     }
-
-
-});
+    
+    });
 // chercher un article
 router.get('/:articleId',async(req, res)=>{
     try {
